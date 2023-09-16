@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 
+import confetti from "canvas-confetti";
+
 import { Layout } from "@/components/layouts";
 
 import { pokeApi } from "@/api";
@@ -24,6 +26,19 @@ const PokemonPage: React.FC<Props> = ({ pokemon }) => {
   const onToggleFavorite = () => {
     localFavorites.toggleFavorite(id);
     setIsInFavorite(!isInFavorite);
+
+    if (isInFavorite) return;
+
+    confetti({
+      zIndex: 999,
+      particleCount: 100,
+      spread: 160,
+      angle: -100,
+      origin: {
+        x: 1,
+        y: 0,
+      },
+    });
   };
 
   return (

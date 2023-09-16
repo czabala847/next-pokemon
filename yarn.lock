@@ -1748,6 +1748,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@types/canvas-confetti@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@types/canvas-confetti/-/canvas-confetti-1.6.1.tgz#2189ef37b6336c69bb6abd8c35b409804fd1038e"
+  integrity sha512-wTSI/k/586KnzL8Inm0yXe/U9x0sO2tc4j/osIAZVsE+hyj2S/M+sdR5zDDLygEkohhlG948zNVBG5QiI4Z2mw==
+
 "@types/color-convert@*":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/color-convert/-/color-convert-2.0.1.tgz#45216f0d8289c6ae32d139ed08c205a9c55bb5d0"
@@ -2153,6 +2158,11 @@ caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001517, caniuse-lite@^1.0.300015
   version "1.0.30001534"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001534.tgz#f24a9b2a6d39630bac5c132b5dff89b39a12e7dd"
   integrity sha512-vlPVrhsCS7XaSh2VvWluIQEzVhefrUQcEsQWSS5A5V+dM07uv1qHeQzAOTGIMy9i3e9bH15+muvI/UHojVgS/Q==
+
+canvas-confetti@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/canvas-confetti/-/canvas-confetti-1.6.0.tgz#193f71aa8f38fc850a5ba94f59091a7afdb43ead"
+  integrity sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA==
 
 chalk@^4.0.0:
   version "4.1.2"
