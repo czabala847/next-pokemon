@@ -25,7 +25,7 @@ export const Layout: React.FC<Props> = ({
 
       <Navbar />
 
-      <main className="px-5">{children}</main>
+      <main className="px-5 py-8">{children}</main>
     </>
   );
 };

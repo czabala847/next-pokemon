@@ -13,7 +13,7 @@ interface Props {
 export default function HomePage({ pokemons }: Props) {
   return (
     <Layout title="Listado de pokémons">
-      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-4 py-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-4">
         {pokemons.map((pokemon) => (
           <PokemonCard pokemon={pokemon} key={pokemon.id} />
         ))}
