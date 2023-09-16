@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { useRouter } from "next/router";
+
 import Image from "next/image";
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 
@@ -21,7 +21,6 @@ const PokemonPage: React.FC<Props> = ({ pokemon }) => {
   const [isInFavorite, setIsInFavorite] = useState(
     localFavorites.existInFavorite(id)
   );
-  const route = useRouter();
 
   const onToggleFavorite = () => {
     localFavorites.toggleFavorite(id);
