@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import confetti from "canvas-confetti";
@@ -12,9 +12,7 @@ interface Props {
 
 export const PokemonDetail: React.FC<Props> = ({ pokemon }) => {
   const { sprites, name, id } = pokemon;
-  const [isInFavorite, setIsInFavorite] = useState(
-    localFavorites.existInFavorite(id)
-  );
+  const [isInFavorite, setIsInFavorite] = useState(false);
 
   const onToggleFavorite = () => {
     localFavorites.toggleFavorite(id);
@@ -33,6 +31,10 @@ export const PokemonDetail: React.FC<Props> = ({ pokemon }) => {
       },
     });
   };
+
+  useEffect(() => {
+    setIsInFavorite(localFavorites.existInFavorite(id));
+  }, [id]);
 
   return (
     <div className="flex flex-col md:flex-row container gap-4 mx-auto">

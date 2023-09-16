@@ -6,6 +6,7 @@ import { PokemonDetail } from "@/components/pokemons";
 
 import { pokeApi } from "@/api";
 import { PokemonFull, PokemonListResponse } from "@/interfaces";
+import { getPokemonInfo } from "@/utils";
 
 interface Props {
   pokemon: PokemonFull;
@@ -26,10 +27,6 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
   const pokemon151Names: string[] = data.results.map(({ name }) => name);
 
-  const paths = pokemon151Names.map((name) => ({
-    params: { name },
-  }));
-
   return {
     paths: pokemon151Names.map((name) => ({
       params: { name },
@@ -40,11 +37,11 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { name } = params as { name: string };
-  const { data } = await pokeApi.get<PokemonFull>(`/pokemon/${name}`);
+  const pokemon = await getPokemonInfo(name);
 
   return {
     props: {
-      pokemon: data,
+      pokemon,
     },
   };
 };
