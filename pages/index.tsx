@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 
 import { Layout } from "@/components/layouts";
+import { PokemonCard } from "@/components/pokemons";
 
 import { pokeApi } from "@/api";
 import { PokemonListResponse, SmallPokemon } from "@/interfaces";
@@ -12,14 +13,10 @@ interface Props {
 export default function HomePage({ pokemons }: Props) {
   return (
     <Layout title="Listado de pokémons">
-      <div>
-        <ul>
-          {pokemons.map(({ id, name }) => (
-            <li key={id}>
-              {id} - {name}
-            </li>
-          ))}
-        </ul>
+      <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-4 py-8">
+        {pokemons.map((pokemon) => (
+          <PokemonCard pokemon={pokemon} key={pokemon.id} />
+        ))}
       </div>
     </Layout>
   );
