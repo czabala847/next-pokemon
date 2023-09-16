@@ -1,5 +1,6 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 
@@ -13,6 +14,11 @@ interface Props {
 
 const PokemonPage: React.FC<Props> = ({ pokemon }) => {
   const { sprites, name } = pokemon;
+  const route = useRouter();
+
+  // const goToFavorite = () => {
+  //   route.push("/favorites");
+  // };
 
   return (
     <Layout title={`Pokemon | ${name}`}>
@@ -34,7 +40,12 @@ const PokemonPage: React.FC<Props> = ({ pokemon }) => {
             <h1 className="text-3xl md:text-5xl font-bold capitalize">
               {name}
             </h1>
-            <Button color="primary">Guardar en favoritos</Button>
+            <Button
+              // onClick={goToFavorite}
+              color="primary"
+            >
+              Guardar en favoritos
+            </Button>
           </CardHeader>
           <CardBody>
             <h3 className="text-xl text-center md:text-left">Sprites:</h3>

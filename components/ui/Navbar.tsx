@@ -20,7 +20,7 @@ export const Navbar = () => {
         <h3>okémon</h3>
       </Link>
 
-      <span>Favoritos</span>
+      <Link href="/favorites">Favoritos</Link>
     </div>
   );
 };
